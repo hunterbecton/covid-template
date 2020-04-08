@@ -7,11 +7,34 @@ public_folder: /assets
 
 collections:
   - name: post
-    label: Post
-    folder: content/post
+    label: Posts
+    folder: content/posts
     create: true
+    editor:
+      preview: false
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+  - name: page
+    label: Pages
+    editor:
+      preview: false
+    files:
+      - label: Home Page
+        name: home
+        file: content/home.md
+        fields:
+          - { name: title, label: Title }
+          - { name: subtitle, label: Subtitle }
+  - name: theme
+    label: Theme
+    editor:
+      preview: false
+    files:
+      - label: Theme Settings
+        name: theme
+        file: theme/theme.md
+        fields:
+          - { name: brand, label: Brand Color, widget: color }
